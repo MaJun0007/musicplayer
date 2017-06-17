@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script>
+        var pixclPatio = 1 / window.devicePixelRatio;
+        document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixclPatio+',minimum-scale='+pixclPatio+',maximum-scale='+pixclPatio+',user-scalable=no" />');
+        var html = document.getElementsByTagName('html')[0];
+        var pageWidth = html.getBoundingClientRect().width;
+        html.style.fontSize = pageWidth / 20 + 'px';
+    </script>
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/bscroll.js"></script>
+</head>
+<body>
+<section class="loading-wrapper">
+    <div class="loading"></div>
+    <p class="loading-percent">0%</p>
+</section>
+<section class="music-listPage">
+    <h1 class="listPage-title title">MJ音乐播放器<a class="homePage titleBtn" href="#"></a></h1>
+    <section class="listPage-listWrapper">
+        <ul class="listPage-list">
+            <!--<li class="list-item">
+                <h2 class="music-name">逆战</h2>
+                <p class="singer">张杰</p>
+            </li>-->
+        </ul>
+    </section>
+    <footer class="list-player">
+        <div class="music-img"><img src="images/miaov.jpg" ></div>
+        <div class="music-info">
+            <h2 class="music-name">MJ</h2>
+            <p class="singer">音乐播放器</p>
+        </div>
+        <div class="audio-control"></div>
+    </footer>
+</section>
+<section class="music-detailPage">
+    <h1 class="detailPage-title title"><span class="music-name">MJ音乐播放器</span><span class="name"></span><a class="slide-downBtn titleBtn" href="#"></a></h1>
+    <section class="music-audio">
+        <div class="lyric-wrapper">
+            <ul class="lyric-list">
+            </ul>
+        </div>
+        <div class="progress">
+            <span class="current-time">00:00</span>
+            <div class="progress-lineBg">
+                <span class="progress-line"></span>
+                <span class="bar"></span>
+            </div>
+            <span class="total-time">00:00</span>
+        </div>
+        <div class="detail-player">
+            <span class="prevBtn"></span>
+            <span class="playBtn"></span>
+            <span class="nextBtn"></span>
+        </div>
+    </section>
+</section>
+<audio class="music-player"></audio>
+<script src="js/index.js"></script>
+</body>
+</html>

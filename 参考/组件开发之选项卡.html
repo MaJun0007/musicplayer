@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .tab div{ width:200px; height:200px; border:1px #000 solid; display:none;}
+        .active{ background:red;}
+    </style>
+    <script src="jquery-1.10.2.min.js"></script>
+</head>
+<body>
+<div class="tab">
+    <input class="active" type="button" value="1">
+    <input type="button" value="2">
+    <input type="button" value="3">
+    <div style="display: block" class="content">1111111111</div>
+    <div class="content">2222222222</div>
+    <div class="content">33333333</div>
+</div>
+<script>
+    $(function(){
+        var t1=new Tab()
+        t1.init(".tab",{
+            event:"mouseover",
+            delay:200
+        })
+        t1.initAvtive(2);
+    });
+
+    function Tab(){
+        this.$parent=null;
+        this.$input=null;
+        this.content=null;
+        this.timer=null;
+        this.currentIndex=0;
+        this.defaultSettings={
+            event:"click",
+            delay:0
+        }
+    }
+    Tab.prototype.init=function (select,opt){
+        this.$parent=$(select);
+        this.$input=this.$parent.find("input");
+        this.content=this.$parent.find("div");
+        $.extend(this.defaultSettings,opt);
+        this.change();
+    }
+    Tab.prototype.change=function (){
+        var TabSelf=this;
+        this.$input.on(this.defaultSettings.event,function (){
+            var This=this;
+            if(TabSelf.defaultSettings.event==="mouseover"&&TabSelf.defaultSettings.delay){
+                TabSelf.currentIndex=$(This).index()
+                TabSelf.timer=setTimeout(function (){
+                    TabSelf.show(TabSelf.currentIndex);
+                },TabSelf.defaultSettings.delay);
+            }else {
+                TabSelf.show(This);
+            }
+        }).mouseout(function (){
+            clearTimeout(TabSelf.timer);
+        })
+    }
+    Tab.prototype.show=function (currentIndex){
+        this.$input.attr("class","");
+        this.content.css("display","none");
+        this.$input.eq(currentIndex).attr("class","active");
+        this.content.eq(currentIndex).css("display","block")
+    }
+    Tab.prototype.initAvtive=function (index){
+        this.show(index);
+    }
+</script>
+</body>
+</html>

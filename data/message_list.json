@@ -1,0 +1,10 @@
+/**
+ Export to JSON plugin for PHPMyAdmin
+ @version 0.1
+ */
+
+// Database 'musicplayer'
+
+// musicplayer.message_list
+
+[{"id":"1","mid":"1","text":"\u9006\u6218\u7559\u8a00111"}, {"id":"2","mid":"1","text":"\u9006\u6218\u7559\u8a00222"}, {"id":"3","mid":"1","text":"\u9006\u6218\u7559\u8a00333"}, {"id":"5","mid":"2","text":"\u70e6\u607c\u6b4c\u7559\u8a00111"}, {"id":"6","mid":"2","text":"\u70e6\u607c\u6b4c\u7559\u8a00222"}, {"id":"7","mid":"2","text":"\u70e6\u607c\u6b4c\u7559\u8a00333"}, {"id":"8","mid":"3","text":"\u7ea2\u5c18\u5ba2\u6808\u7559\u8a00111"}, {"id":"9","mid":"3","text":"\u7ea2\u5c18\u5ba2\u6808\u7559\u8a00222"}, {"id":"10","mid":"3","text":"\u7ea2\u5c18\u5ba2\u6808\u7559\u8a00333"}, {"id":"11","mid":"4","text":"\u5f02\u4e61\u4eba\u7559\u8a00111"}, {"id":"12","mid":"4","text":"\u5f02\u4e61\u4eba\u7559\u8a00222"}, {"id":"13","mid":"4","text":"\u5f02\u4e61\u4eba\u7559\u8a00333"}, {"id":"14","mid":"5","text":"\u76f8\u4f9d\u4e3a\u547d\u7559\u8a00111"}, {"id":"15","mid":"5","text":"\u76f8\u4f9d\u4e3a\u547d\u7559\u8a00222"}, {"id":"16","mid":"5","text":"\u76f8\u4f9d\u4e3a\u547d\u7559\u8a00333"}, {"id":"17","mid":"6","text":"\u4e0d\u5c06\u5c31\u7559\u8a00111"}, {"id":"18","mid":"6","text":"\u4e0d\u5c06\u5c31\u7559\u8a00222"}, {"id":"19","mid":"6","text":"\u4e0d\u5c06\u5c31\u7559\u8a00333"}, {"id":"20","mid":"7","text":"\u53bb\u5927\u7406\u7559\u8a00111"}, {"id":"21","mid":"7","text":"\u53bb\u5927\u7406\u7559\u8a00222"}, {"id":"22","mid":"7","text":"\u53bb\u5927\u7406\u7559\u8a00333"}, {"id":"23","mid":"8","text":"\u8463\u5c0f\u59d0\u7559\u8a00111"}, {"id":"24","mid":"8","text":"\u8463\u5c0f\u59d0\u7559\u8a00222"}, {"id":"25","mid":"8","text":"\u8463\u5c0f\u59d0\u7559\u8a00333"}, {"id":"26","mid":"9","text":"\u66fe\u7ecf\u7684\u4f60\u7559\u8a00111"}, {"id":"27","mid":"9","text":"\u66fe\u7ecf\u7684\u4f60\u7559\u8a00222"}, {"id":"28","mid":"9","text":"\u66fe\u7ecf\u7684\u4f60\u7559\u8a00333"}, {"id":"29","mid":"10","text":"\u90a3\u4e9b\u82b1\u513f\u7559\u8a00111"}, {"id":"30","mid":"10","text":"\u90a3\u4e9b\u82b1\u513f\u7559\u8a00222"}, {"id":"31","mid":"10","text":"\u90a3\u4e9b\u82b1\u513f\u7559\u8a00333"}]

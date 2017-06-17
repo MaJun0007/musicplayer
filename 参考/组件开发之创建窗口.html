@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body,html{
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    .Swindow{
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border: 1px solid #000;
+        background-color: #fff;
+        z-index: 100;
+    }
+    .title{
+        background-color: #ccc;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+    }
+    .title .close{
+        float: right;
+    }
+    .mask{
+        position: absolute;
+        top: 300px;
+        left: 300px;
+        width: 300px;
+        height: 300px;
+        background: rgba(0,0,0,0.4);
+        z-index: 10;
+    }
+</style>
+<body>
+<input type="button" value="1"/>
+<input type="button" value="2"/>
+<input type="button" value="3"/>
+<!--<div class="Swindow">
+    <h3 class="title">登录<span >X</span></h3>
+    <div class="content"></div>
+</div>-->
+<script>
+    var input1=document.getElementsByTagName("input")[0];
+    input1.onclick=function (){
+        var d1=new dialog();
+        d1.init({
+            title:'登录',
+            windowNum:0
+        })
+    }
+
+    function dialog(opt){
+        this.defaultSettings={
+            width:300,
+            height:300,
+            title:'标题',
+            top:'center',
+            left:'center'
+        }
+        this.createSwindow=null;
+        this.mask=null;
+    }
+    dialog.prototype.init=function (opt) {
+        this.reseting(this.defaultSettings, opt);
+        if(this.recodeCreatedSwindowNum[opt.windowNum]=== undefined){
+            this.recodeCreatedSwindowNum[opt.windowNum]=true;
+        }
+        if(this.recodeCreatedSwindowNum[opt.windowNum]){
+            this.create();
+            this.close();
+            this.recodeCreatedSwindowNum[opt.windowNum]=false;
+        }
+    }
+    dialog.prototype.reseting=function (opt1,opt2){
+        for (var attr in opt2) {
+            opt1[attr]=opt2[attr]
+        }
+    }
+    dialog.prototype.create=function (){
+        this.createSwindow=document.createElement("div");
+        this.createSwindow.className="Swindow";
+        this.createSwindow.innerHTML='<h3 class="title">'+this.defaultSettings.title+'<span class="close">X</span></h3><div class="content"></div>';
+        document.body.appendChild(this.createSwindow);
+        this.setData();
+        this.createMask()
+    }
+    dialog.prototype.setData=function (){
+        this.createSwindow.style.width=this.defaultSettings.width+"px";
+        this.createSwindow.style.height=this.defaultSettings.height+"px";
+        if(this.defaultSettings.top==="center"&&this.defaultSettings.left==="center"){
+            this.createSwindow.style.top=(document.documentElement.clientHeight-this.createSwindow.offsetHeight)/2+"px";
+            this.createSwindow.style.left=(document.documentElement.clientWidth-this.createSwindow.offsetWidth)/2+"px";
+
+        }else if(this.defaultSettings.top==="bottom"&&this.defaultSettings.left==="right"){
+            this.createSwindow.style.bottom=0+"px";
+            this.createSwindow.style.right=0+"px";
+        }
+    }
+    dialog.prototype.createMask=function (){
+        this.mask=document.createElement("div");
+        this.mask.className="mask";
+        document.body.appendChild(this.mask);
+    }
+    dialog.prototype.close=function (){
+        var closeBtn=this.createSwindow.getElementsByClassName("close")[0];
+        var dialogSelf=this;
+        closeBtn.onclick=function () {
+            document.body.removeChild(dialogSelf.mask);
+            document.body.removeChild(dialogSelf.createSwindow);
+            dialogSelf.recodeCreatedSwindowNum[dialogSelf.defaultSettings.windowNum]=true;
+        }
+    }
+    dialog.prototype.recodeCreatedSwindowNum={};
+</script>
+</body>
+</html>

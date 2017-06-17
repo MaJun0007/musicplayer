@@ -1,0 +1,372 @@
+/*reset*/
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+html,
+body,
+h1,
+h2,
+h3,
+ul {
+  padding: 0;
+  margin: 0;
+}
+ul {
+  list-style: none;
+}
+img {
+  display: block;
+  border: none;
+}
+input {
+  border: 0;
+  outline: none;
+}
+html {
+  max-width: 640px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+body {
+  position: relative;
+  background: url(../img/bg.jpg) no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  font-size: 0.65rem;
+  overflow: hidden;
+}
+.musicList {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2rem;
+  line-height: 2rem;
+  background: rgba(41, 171, 226, 0.6);
+  text-align: center;
+  color: #fff;
+}
+.header .title {
+  font-size: 1rem;
+  font-weight: normal;
+}
+.header .icon {
+  display: inline-block;
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  background: url(../img/tip.png) no-repeat;
+  -webkit-background-size: 0.8rem 0.8rem;
+  background-size: 0.8rem 0.8rem;
+}
+.musicList_main {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 2rem;
+  left: 0;
+}
+.musicList_list li {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 3rem;
+  padding: 0.6rem 0 0.5rem 1rem;
+  border-bottom: 1px #999 solid;
+  background-color: rgba(26, 26, 26, 0.6);
+}
+.musicList_list li.active {
+  border-left: 0.2rem solid #29abe2;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.musicTitle {
+  font-size: 0.8rem;
+  color: #fff;
+}
+.name {
+  display: inline-block;
+  padding-top: 0.2rem;
+  color: #b3b3b3;
+}
+.musicList_list li.addMoreMusic {
+  padding: 0.6rem 0 0 0;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+}
+.musicList_list li.addMoreMusic h3 {
+  color: deeppink;
+}
+.musicListAudio {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3.25rem;
+  background: url("../img/list_audioBg.png") repeat-x;
+  -webkit-background-size: cover;
+  background-size: cover;
+  padding: 0.35rem 0.75rem 0 0.75rem;
+  box-sizing: border-box;
+}
+.musicListAudio .audioImg {
+  float: left;
+  width: 2.5rem;
+  height: 2.5rem;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.musicListAudio .audioImg.rotate {
+  animation: 3s linear infinite audioImgRotate;
+  -webkit-animation: 3s linear infinite audioImgRotate;
+}
+@keyframes audioImgRotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes audioImgRotate {
+  0% {
+    -webkit-transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+.musicListAudio .audioInfor {
+  float: left;
+  padding-top: 0.25rem;
+  margin-left: 1rem;
+}
+.musicListAudio .audioBtn {
+  float: right;
+  margin-top: 0.5rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  background: url("../img/list_audioPlay.png") no-repeat;
+  -webkit-background-size: 1.6rem 1.6rem;
+  background-size: 1.6rem 1.6rem;
+  display: none;
+}
+.musicDetail {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transform: translateY(100%);
+  overflow: hidden;
+  background: url("../img/detailsBg.jpg");
+  -webkit-background-size: cover;
+  background-size: cover;
+  z-index: 10;
+  transition: 0.3s all;
+}
+.musicDetail .musicDetail_header span {
+  font-size: 0.6rem;
+}
+.musicDetail .musicDetail_header .icon {
+  top: 0.8rem;
+  width: 0.8rem;
+  height: 0.4rem;
+  background: url("../img/details_arrow.png") no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+.musicDetail .content {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: #fff;
+}
+.musicDetail .content .musicLyric {
+  width: 100%;
+  height: 65%;
+  padding: 0.5rem 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.musicDetail .content .musicLyric .musicLyric_list {
+  text-align: center;
+  transition: 1s;
+}
+.musicDetail .content .musicLyric .musicLyric_list li {
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+}
+.musicDetail .content .musicLyric .musicLyric_list li.active {
+  color: #29abe2;
+}
+.musicDetail .content .musicDetail_audioShow {
+  position: relative;
+  margin-top: 0.75rem;
+}
+.musicDetail .content .musicDetail_audioShow .audioTime {
+  text-align: center;
+  font-size: 18px;
+}
+.musicDetail .content .musicDetail_audioShow .audioTime .MusicTimeProgressBG {
+  position: relative;
+  display: inline-block;
+  width: 180px;
+  height: 2px;
+  top: -5px;
+  background-color: #fff;
+}
+.musicDetail .content .musicDetail_audioShow .audioTime .MusicTimeProgressBG .MusicTimeProgress {
+  position: absolute;
+  display: inline-block;
+  top: 0px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #29abe2;
+}
+.musicDetail .content .musicDetail_audioShow .audioTime .MusicTimeProgressBG .MusicTimeProgressBar {
+  position: absolute;
+  display: inline-block;
+  top: -9px;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.musicDetail .content .musicDetail_audioShow .audioBtnList {
+  position: relative;
+  margin: 20px auto;
+  height: 30%;
+}
+.musicDetail .content .musicDetail_audioShow .audioBtnList li {
+  width: 1.85rem;
+  height: 1.85rem;
+  background: url('../img/details_prev.png') no-repeat;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.musicDetail .content .musicDetail_audioShow .audioBtnList .prevMusic {
+  position: absolute;
+  top: 0.45rem;
+  left: 3.5rem;
+}
+.musicDetail .content .musicDetail_audioShow .audioBtnList .playMusic {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  width: 2.75rem;
+  height: 2.75rem;
+  background-image: url('../img/details_play.png');
+}
+.musicDetail .content .musicDetail_audioShow .audioBtnList .nextMusic {
+  position: absolute;
+  top: 0.45rem;
+  right: 3.5rem;
+  background-image: url('../img/details_next.png');
+}
+.musicDetail .content .detailAmegChangeTip {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translate(-50%);
+}
+.musicDetail .content .detailAmegChangeTip span {
+  display: inline-block;
+  width: 9px;
+  height: 6px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #29abe2;
+}
+.musicDetail .content .detailAmegChangeTip span.active {
+  width: 30px;
+  height: 6px;
+}
+.musicDetail .discuss {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  transform: translateX(100%);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 0.5rem 2rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.musicDetail .discuss .leaveMessage {
+  padding: 0.25rem;
+  width: 100%;
+  height: 5rem;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  background-color: #cac7bd;
+  outline: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.musicDetail .discuss ::-webkit-input-placeholder {
+  color: #333;
+}
+.musicDetail .discuss .submitMessage {
+  padding: 0;
+  width: 100%;
+  height: 1.5rem;
+  margin-top: 0.1rem;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #29abe2;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+}
+.musicDetail .discuss .messageList {
+  margin-top: 0.25rem;
+}
+.musicDetail .discuss .messageList li {
+  background-color: rgba(26, 26, 26, 0.6);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  color: #fff;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+}
